@@ -167,9 +167,7 @@ void setState(int state, int channel) {
   digitalWrite(SONOFF_RELAY_PINS[channel], state);
 
   //led
-  if (SONOFF_LED_RELAY_STATE) {
-    digitalWrite(SONOFF_LED, (state + 1) % 2); // led is active low
-  }
+  digitalWrite(SONOFF_LED, (state + 1) % 2); // led is active low
 
   //blynk
   updateBlynk(channel);
